@@ -9,7 +9,7 @@ ADD::ADD(vector <Operand> s): Instruction(s)
 
 
 
-int ADD::calculate(int inst, DataMem &data, bool& on) //execution function for add
+int ADD::calculate(int inst, Data_mem &data, bool& on) //execution function for add
 {
 	int int1 = data.getVar(operation.at(0).getValue());//assign data memory location for int1
 	int int2 = data.getVar(operation.at(1).getValue());//assign data memory location for int2
