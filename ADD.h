@@ -12,7 +12,7 @@ public:
 	ADD(vector <Operand>); 
 
 	//calcutation function 
-	int calculate(int, DataMem&, bool& running);
+	int calculate(int, DataMem&, bool& on);
 
 	//printing function
 	void print();
