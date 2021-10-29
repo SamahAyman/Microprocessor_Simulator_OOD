@@ -8,8 +8,8 @@ LOE::LOE(vector <Operand> s):
 
 int LOE::excute(int inst, Data_mem &data, bool& on) 
 {
-	int in1 = data.getVar(op.at(0).getValue());
-	int in2 = data.getVar(op.at(1).getValue());
+	int in1 = data.getVar(operation.at(0).getValue());
+	int in2 = data.getVar(operation.at(1).getValue());
 	
 
   if (in1 <= in2)
