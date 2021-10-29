@@ -2,10 +2,7 @@
 #include "ADD.h"
 
 ADD::ADD(vector <Operand> s): Instruction(s) 
-{
-	if(s.size() != 3)
-        throw invalid_argument("Invalid inputs");
-}
+{}
 
 
 
