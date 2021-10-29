@@ -18,7 +18,7 @@ void ASI::print()
 {
 
 	cout << "ASI ";
-	for (Operand iter : op)
+	for (Operand iter : operation)
 		cout << iter.getValue() << " ";
 	cout << endl;
 }
