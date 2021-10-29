@@ -1,14 +1,10 @@
 #include "NEG.h"
 
 NEG::NEG(vector<Operand> s): Instruction(s) 
-{
-	if(s.size() != 2)
-        throw invalid_argument("Invalid input");
-
-}
+{}
 
 
-int NEG::calculate(int inst, DataMem &data, bool& on) 
+int NEG::calculate(int inst, Data_mem &data, bool& on) 
 {
 	int int1 = data.getVar(operation.at(0).getValue());
 	int result =  -1*int1; 
@@ -18,7 +14,7 @@ int NEG::calculate(int inst, DataMem &data, bool& on)
 and stored it in memory location %d now with value %d \n", operation.at(0).getValue(), int1,
         operation.at(1).getValue(), result);
 
-	return inst++;
+	return inst+1;
 }
 
 
