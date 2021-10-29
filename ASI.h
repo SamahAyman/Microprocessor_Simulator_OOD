@@ -15,7 +15,7 @@ public:
     void print();
 
     //Assigns a constant value to a variable
-    int calculate(int, Data_mem& , bool& on);
+    int calculate(int, Data_mem& , bool& );
     //destructor
     ~ASI();
 
