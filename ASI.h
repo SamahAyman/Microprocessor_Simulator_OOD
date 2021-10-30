@@ -1,4 +1,4 @@
-#ifndef ASI_H
+#ifndef ASI_H 
 #define ASI_H
 #include "Instruction.h"
 using namespace std;

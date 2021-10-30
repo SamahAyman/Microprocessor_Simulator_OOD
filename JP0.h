@@ -1,4 +1,4 @@
-#ifndef JP0_H
+#ifndef JP0_H 
 #define JP0_H
 #include "Instruction.h"
 using namespace std;

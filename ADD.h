@@ -1,7 +1,8 @@
-#ifndef ADD_H
+#ifndef ADD_H 
 #define ADD_H
 #include "Instruction.h"
 #include <iostream>
+#include "Operand.h"
 using namespace std;
 
 //(ADD operation)derived functionn from instruction class

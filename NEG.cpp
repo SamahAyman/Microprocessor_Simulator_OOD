@@ -1,4 +1,4 @@
-#include "NEG.h"
+#include "NEG.h" 
 
 NEG::NEG(vector<Operand> s): Instruction(s) 
 {}

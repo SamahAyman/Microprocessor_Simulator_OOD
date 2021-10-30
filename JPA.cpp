@@ -1,9 +1,9 @@
-#include "JPA.h"
+#include "JPA.h" 
+#include "Operand.h"
 
 
 JPA::JPA(vector <Operand> s): Instruction(s) //construction and parameter validation
 {
-
 }
 
 void JPA::print()

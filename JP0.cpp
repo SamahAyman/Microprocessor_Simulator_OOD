@@ -1,4 +1,4 @@
-#include "JP0.h"
+#include "JP0.h" 
 JP0::JP0(vector<Operand> rs) //construction and parameter validation
     : Instruction(rs)
 {}

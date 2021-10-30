@@ -1,4 +1,4 @@
-#ifndef LOE_H
+#ifndef LOE_H 
 #define LOE_H
 #include "Instruction.h"
 using namespace std;

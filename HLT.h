@@ -1,4 +1,4 @@
-#ifndef HLT_H
+#ifndef HLT_H 
 #define HLT_H
 #include "Instruction.h"
 using namespace std;

@@ -1,4 +1,4 @@
-#include "LOE.h"
+#include "LOE.h" 
 
 LOE::LOE(vector <Operand> s): 
 		Instruction(s) 

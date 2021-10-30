@@ -1,4 +1,4 @@
-#pragma once
+#pragma once 
 #ifndef INSTRUCTION_H
 #define INSTRUCTION_H
 #include "Operand.h"

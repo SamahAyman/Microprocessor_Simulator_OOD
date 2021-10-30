@@ -1,17 +1,17 @@
-#ifndef JPA_H
-#define JPA_H
 #include "Instruction.h"
 #include <vector>
-#include <iostream>
-using namespace std;
-//JPA function 
+#include "Operand.h"
+
+#ifndef JPA_H 
+#define JPA_H
+
 class JPA : public Instruction
 {
 public:
-	JPA(vector <Operand>);
-	int excute(int, Data_mem &, bool& on);
+	JPA(vector<Operand>);
+	int calculate(int, Data_mem &, bool& on);
 	void print();
 	~JPA();
 };
-#endif // !JPA_H
+#endif
 

@@ -1,4 +1,3 @@
-
 #include "ADD.h"
 
 ADD::ADD(vector <Operand> s): Instruction(s) 

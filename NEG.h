@@ -1,4 +1,4 @@
-#ifndef NEG_H
+#ifndef NEG_H 
 #define NEG_H
 #include "Instruction.h"
 #include <iostream>
