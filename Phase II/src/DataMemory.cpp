@@ -36,7 +36,7 @@ void DataMemory::lock(int pc)
 } 
 
 //unlock function 
-void DataMemory::lock(int pc)
+void DataMemory::unlock(int pc)
 {
 	this->mu_allocation[pc].unlock();
 

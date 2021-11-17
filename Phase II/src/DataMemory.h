@@ -5,7 +5,7 @@
 #include <sstream>
 #include<iostream>
 #include "windows.h"
-#include <mutex>          // std::mutex
+#include <mutex>          
 using namespace std;
 
 
@@ -26,4 +26,4 @@ public:
 	void print();                //function to print the data memory 
 	~DataMemory();
 };
-#endif // !DATAMEM_H
+#endif
