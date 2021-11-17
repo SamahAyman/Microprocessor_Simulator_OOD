@@ -9,7 +9,6 @@ DataMemory::DataMemory()
 	this->DataMem = new int[1024];
 	for (int i = 0; i < 1024; i++) 
 		this->is_allocated[i] = 0;
-	cout << "Initializing the Data Memory" << endl;
 }
 
 //getter function
@@ -43,12 +42,10 @@ void DataMemory::unlock(int pc)
 } 
 
 //print the data memory
-void DataMemory::print() 
+void DataMemory::print()
 {
-	cout << "-----------------------------------------" << endl;
-	cout << "Data Memory" << endl;
-	cout << "-----------------------------------------" << endl;
-	for (int i = 0; i < 1024; i++) 
+	cout << "-----------------------------------------\n** Data Memory Values **\nVariable ==> Value\n";
+	for (int i = 0; i < 1024; i++)
 	{
 		if (this->is_allocated[i] == 1)
 		{
@@ -56,7 +53,7 @@ void DataMemory::print()
 			cout << this->DataMem[i] << endl;
 		}
 		else
-			cout << "empty location"; 
+			cout << "empty location";
 		cout << endl;
 	}
 	cout << "-----------------------------------------" << endl;
@@ -64,6 +61,5 @@ void DataMemory::print()
 
 DataMemory::~DataMemory() 
 {
-	cout << "Deleting the data memory" << endl;
 	delete[] this->DataMem;
 }

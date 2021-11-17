@@ -7,7 +7,6 @@
 //constructor
 InstructionMemory::InstructionMemory ()
 {
-	cout << "Initializing the Instruction Memory" << endl;
 	this->inst = new Instruction*[1024];     //allocating an instruction memory of size 1024
 	this->inst_count = 0;                    //memory is initially empty --> intstruction count = 0
 }
@@ -121,22 +120,20 @@ ifstream& operator>>(ifstream& file, InstructionMemory& instMem)
 }
 
 //functio to print all existing instructions in the memory
-void InstructionMemory::print ()
+void InstructionMemory::print()
 {
-	cout << "------------------------------------------------" << endl;
-	cout << "Current Instructions in the Instruction Memory";
+	cout << "-----------------------------------------\n";
+	cout << "** Instructions in Instruction Memory ** \nPC ==> Instruction\n";
 	for (int i = 0; i < this->inst_count; i++)
 	{
 		cout << i << "  ==>  ";
-		inst[i]->print();
-		cout << endl;
+		cout << inst[i]->print().str();
 	}
-	cout << "------------------------------------------------" << endl;
+	cout << "-----------------------------------------" << endl;
 }
 
 //destructor 
 InstructionMemory::~InstructionMemory() {
-	cout << "Deleting the instruction memory" << endl;
 	for (int i = 0; i < this->inst_count; i++) {
 		delete this->inst[i];
 	}
