@@ -61,6 +61,5 @@ void DataMemory::print()
 
 DataMemory::~DataMemory() 
 {
-	cout << "Deleting the data memory" << endl;
 	delete[] this->DataMem;
 }

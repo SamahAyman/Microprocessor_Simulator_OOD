@@ -7,7 +7,6 @@
 //constructor
 InstructionMemory::InstructionMemory ()
 {
-	cout << "Initializing the Instruction Memory" << endl;
 	this->inst = new Instruction*[1024];     //allocating an instruction memory of size 1024
 	this->inst_count = 0;                    //memory is initially empty --> intstruction count = 0
 }
@@ -135,7 +134,6 @@ void InstructionMemory::print()
 
 //destructor 
 InstructionMemory::~InstructionMemory() {
-	cout << "Deleting the instruction memory" << endl;
 	for (int i = 0; i < this->inst_count; i++) {
 		delete this->inst[i];
 	}
