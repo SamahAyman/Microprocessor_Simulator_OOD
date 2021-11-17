@@ -1,6 +1,7 @@
 #include "Operand.h"
 #include "DataMemory.h"
 #include <vector>
+#include <sstream>
 using namespace std;
 
 #ifndef INSTRUCTION_H
@@ -17,7 +18,7 @@ public:
 	//virtual function for excuting the instruction with default value=0 since it will be changed in derived classes
 	virtual int calculate(int, DataMemory&, bool& ) = 0;
 	//virtual function for printing ,deafult value=0 since it depends on the operation  
-	virtual void print()=0; 
+	virtual stringstream print()=0; 
 	~Instruction ();
 };
 #endif
