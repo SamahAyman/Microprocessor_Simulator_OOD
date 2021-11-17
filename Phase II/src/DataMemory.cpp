@@ -15,13 +15,9 @@ DataMemory::DataMemory()
 //getter function
 int DataMemory::get_value(int location)
 {
-	if (!this->is_allocated[location]) 
-		throw runtime_error("Memory Location is not allocated!");
-	else
-	{
-		cout << "Got value: " << this->DataMem[location] << "from location #" << location << endl;
-		return (this->DataMem[location]);
-	}
+	cout << "Got value: " << this->DataMem[location] << "from location #" << location << endl;
+	return (this->DataMem[location]);
+	
 }
 
 //setter function
@@ -31,6 +27,20 @@ void DataMemory::set_value(int location, int value)
 	this->is_allocated[location] = 1;  //assign the memory location as allocated
 	cout << "Location #" << location << " is set to " << value << endl;
 }
+
+//lock function 
+void DataMemory::lock(int pc)
+{
+	this->mu_allocation[pc].lock();
+
+} 
+
+//unlock function 
+void DataMemory::lock(int pc)
+{
+	this->mu_allocation[pc].unlock();
+
+} 
 
 //print the data memory
 void DataMemory::print() 
