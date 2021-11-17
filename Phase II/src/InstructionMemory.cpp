@@ -121,17 +121,16 @@ ifstream& operator>>(ifstream& file, InstructionMemory& instMem)
 }
 
 //functio to print all existing instructions in the memory
-void InstructionMemory::print ()
+void InstructionMemory::print()
 {
-	cout << "------------------------------------------------" << endl;
-	cout << "Current Instructions in the Instruction Memory";
+	cout << "-----------------------------------------\n";
+	cout << "** Instructions in Instruction Memory ** \nPC ==> Instruction\n";
 	for (int i = 0; i < this->inst_count; i++)
 	{
 		cout << i << "  ==>  ";
-		inst[i]->print();
-		cout << endl;
+		cout << inst[i]->print().str();
 	}
-	cout << "------------------------------------------------" << endl;
+	cout << "-----------------------------------------" << endl;
 }
 
 //destructor 
