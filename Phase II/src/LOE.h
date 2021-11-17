@@ -9,8 +9,8 @@ class LOE : public Instruction
 {
 public:
     LOE(vector<Operand>);
-    int calculate(int, DataMemory&, bool& run);
-	void print();
+	int calculate(int, DataMemory&, bool& run, int thread);
+	stringstream print();
     ~LOE();
 };
 #endif 

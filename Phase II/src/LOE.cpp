@@ -15,30 +15,35 @@ LOE::LOE(vector <Operand> inst): Instruction(inst)
 }
 
 //execution function
-int LOE::calculate(int pc, DataMemory &data, bool& run)
+int LOE::calculate(int pc, DataMemory &data, bool& run, int thread)
 {
+	stringstream ss;
 	int input1 = data.get_value(operation.at(0).get_value());
 	int input2 = data.get_value(operation.at(1).get_value());
 	if (input1 <= input2)
-    {
-        data.set_value(operation.at(2).get_value(), 1);
-		cout << "Executing Instruction #" << pc << endl;
-    }
-    else
-    {
-        data.set_value(operation.at(2).get_value(), 0);
-		cout << "Executing Instruction #" << pc << endl;
-    }
-	return pc++;
+		data.set_value(operation.at(2).get_value(), 1);
+	else
+		data.set_value(operation.at(2).get_value(), 0);
+
+	ss << "Thread #" << thread << endl;
+	ss << "Instruction #" << pc << " set the data at address " << operation.at(2).get_value()
+		<< " with 1 if the data at address " << operation.at(0).get_value()
+		<< " value: " << input1 << " is less than the data at address " << operation.at(1).get_value()
+		<< " value: " << input2 << endl;
+
+	cout << ss.str();
+	return pc + 1;
 }
 
 //print funtion
-void LOE::print()
+stringstream LOE::print()
 {
-	cout << "LOE ";
+	stringstream ss;
+	ss << "LOE ";
 	for (Operand iter : operation)
-		cout << iter.get_value() << " ";
-	cout << endl;
+		ss << iter.get_value() << " ";
+	ss << endl;
+	return ss;
 }
 
 //destructor
