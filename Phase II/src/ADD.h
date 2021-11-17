@@ -11,8 +11,8 @@ class ADD : public Instruction
 {
 public:
 	ADD(vector <Operand>); 
-	int calculate(int, DataMemory&, bool& run);
-	void print();
+	int calculate(int, DataMemory&, bool& run, int thread);
+	stringstream print();
 	~ADD();
 };
 #endif
