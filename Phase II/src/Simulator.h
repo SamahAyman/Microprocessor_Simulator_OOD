@@ -16,7 +16,7 @@ private:
 	//ifstream file;                  //file containing the instructions 
 	string program_name;
 	InstructionMemory* instMem;      //intruction memory object
-	DataMemory* dataMem;             //data memory object 
+	DataMemory dataMem;             //data memory object 
 	int *pc;                         //program counter 
 	thread* processes;				//thread pointer for all processes 
 	int size; 						//size of programs inserted into simuation

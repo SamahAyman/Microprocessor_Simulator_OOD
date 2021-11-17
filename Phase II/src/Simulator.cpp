@@ -55,12 +55,12 @@ void Simulator::process(int counter)
 	Instruction *Inst = nullptr;
 	while (this->run[counter]) //keep the program running while the value run is true (ie; no HLT instruction called)
 	{ 
-		Inst = this->instMem[counter].getInst(pc[counter], counter);  //get intruction to excute
+		Inst = this->instMem[counter].get_instruction(pc[counter]);  //get intruction to excute
 		stringstream stream;
 		try{
-		Inst->lockOperands(this->dataMem);
-		this->pc[i] = Inst->calculate(this->pc[i], this->dataMem, this->run[i], counter);  //execute instruction and update pc
-		Inst->unlockOperands(this->dataMem);
+		Inst->lock_inst(this->dataMem);
+		this->pc[counter] = Inst->calculate(this->pc[counter], this->dataMem, this->run[counter], counter);  //execute instruction and update pc
+		Inst->unlock_inst(this->dataMem);
 		}
 		catch (runtime_error& ex) {
 			cerr << "Runtime Error!!!\n" << ex.what() << endl;
