@@ -7,17 +7,23 @@ HLT::HLT(vector<Operand> s)  : Instruction(s)
 {}
 
 //execution function
-int HLT::calculate(int pc, DataMemory& data, bool& run)
+int HLT::calculate(int pc, DataMemory& data, bool& run, int thread)
 {
-    run = 0;
-    cout << "SIM stopped at instuction #"<< pc <<endl;
-    return pc++;
+	stringstream ss;
+	run = 0;
+	ss << "Thread #" << thread << endl;
+	ss << "Excution stopped at instuction #" << pc << endl;
+	cout << ss.str();
+	return pc;
 }
 
 //print function
-void HLT::print() 
+stringstream HLT::print()
 {
-	cout << "SIM stopped!" << endl;
+	stringstream ss;
+	ss << "HLT ";
+	ss << endl;
+	return ss;
 }
 
 //destructor

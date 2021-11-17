@@ -9,8 +9,8 @@ class HLT : public Instruction
 {
 public:
     HLT(vector<Operand>); 
-    int calculate(int, DataMemory&, bool& run);
-	void print();
+	int calculate(int, DataMemory&, bool& run, int thread);
+	stringstream print();
 	~HLT();
 };
 #endif 
