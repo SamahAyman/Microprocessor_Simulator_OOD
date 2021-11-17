@@ -10,8 +10,8 @@ class MUL : public Instruction
 {
 public:
 	MUL(vector <Operand>);
-	int calculate(int, DataMemory&, bool& run);
-	void print();
+	int calculate(int, DataMemory&, bool&, int thread);
+	stringstream print();
 	~MUL();
 };
 #endif
