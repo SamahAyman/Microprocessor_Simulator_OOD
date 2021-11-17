@@ -9,8 +9,8 @@ class ASI : public Instruction
 {
 public:
     ASI(vector<Operand>);
-    void print();
-    int calculate(int, DataMemory&, bool& run);
+	stringstream print();
+	int calculate(int, DataMemory&, bool& run, int thread);
     ~ASI();
 };
 #endif

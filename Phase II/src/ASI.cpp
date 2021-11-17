@@ -15,21 +15,36 @@ ASI::ASI(vector<Operand> inst): Instruction(inst)
 }
 
 //execution function
-int ASI::calculate(int pc, DataMemory& data, bool& run)
+int ASI::calculate(int pc, DataMemory& data, bool& run, int thread)
 {
-    int in1 = operation[0].get_value(); 
-    data.set_value(operation[1].get_value(), in1);
-	cout << "Executing Instruction #" << pc << endl;
-    return pc++;
+	stringstream ss;
+	ss.clear();
+
+	int in1 = operation[0].get_value();
+	data.set_value(operation[1].get_value(), in1);
+
+	ss << "Thread #" << thread << endl;
+	ss << "Instruction #" << pc << " set the data at address " << operation[1].get_value()
+		<< " with the data =  " << in1 << endl;
+
+	cout << ss.str();
+	ss.clear();
+	return pc + 1;
 }
 
 //print function
-void ASI::print() 
+stringstream ASI::print()
 {
-	cout << "ASI ";
+	stringstream ss;
+	ss.clear();
+
+	ss << "ASI ";
 	for (Operand iter : operation)
 		cout << iter.get_value() << " ";
-	cout << endl;
+
+	ss << endl;
+	ss.clear();
+	return ss;
 }
 
 //destructor
