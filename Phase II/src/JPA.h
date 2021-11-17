@@ -10,8 +10,8 @@ class JPA : public Instruction
 {
 public:
 	JPA(vector<Operand>);
-	int calculate(int, DataMemory&, bool& run);
-	void print();
+	int calculate(int, DataMemory&, bool& run, int thread);
+	stringstream print();
 	~JPA();
 };
 #endif

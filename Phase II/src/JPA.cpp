@@ -13,20 +13,27 @@ JPA::JPA(vector <Operand> inst): Instruction(inst)
 }
 
 //print function
-void JPA::print() 
+stringstream JPA::print()
 {
-	cout << "JPA ";
+	stringstream ss;
+	ss << "JPA ";
 	for (Operand iter : operation)
-		cout << iter.get_value() << " ";
-	cout << endl;
+		ss << iter.get_value() << " ";
+	ss << endl;
+	return ss;
 }
 
 //execution function
-int JPA::calculate(int pc, DataMemory& data, bool& run)
+int JPA::calculate(int pc, DataMemory& data, bool& run, int thread)
 {
+	stringstream ss;
 	int jpc;
 	jpc = operation[0].get_value();
-	cout << "Executing Instruction #" << pc << endl;
+
+	ss << "Thread #" << thread << endl;
+	ss << "Instruction #" << pc << " will jump to position " << jpc << endl;
+
+	cout << ss.str();
 	return jpc;
 }
 
