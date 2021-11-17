@@ -15,36 +15,38 @@ JP0::JP0(vector<Operand> inst): Instruction(inst)
 }
 
 //execution function
-int JP0::calculate(int pc, DataMemory& data, bool& run)
+int JP0::calculate(int pc, DataMemory& data, bool& run, int thread)
 {
-    int input1 = data.get_value(operation[0].get_value());
-    int input2 = operation[1].get_value();
+	stringstream ss;
 
-    if (input2 < 0 || input2 > 1023)
-        cout << "Instruction memory index is out of range!" << endl;
-    else
-    {
-        if (input1 == 0)
-        {
-			cout << "Executing Instruction #" << pc << endl;
-			pc= input2;
-        }
-        else
-        {
-			cout << "The SIM skipped jump instruction (JP0)" << endl;
-			pc++; 
-		}
-    }
-    return pc;
+	int input1 = data.get_value(operation[0].get_value());
+	int input2 = operation[1].get_value();
+	string jump_condition;
+	if (input1 == 0)
+		jump_condition = "jump";
+	else
+		jump_condition = "not jump";
+
+	ss << "Thread #" << thread << endl;
+	ss << "Instruction #" << pc << " will " << jump_condition << " to position " << input2 << endl;
+	cout << ss.str();
+
+	if (input1 == 0)
+		return input2;
+	else
+		return pc + 1;
 }
 
 //print function
-void JP0::print() 
+stringstream JP0::print()
 {
-	cout << "JP0 ";
+	stringstream ss;
+	ss << "JP0 ";
 	for (Operand iter : operation)
-		cout << iter.get_value() << " ";
-	cout << endl;
+		ss << iter.get_value() << " ";
+
+	ss << endl;
+	return ss;
 }
 
 //destructor

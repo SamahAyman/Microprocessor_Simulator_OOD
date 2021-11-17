@@ -9,8 +9,8 @@ class JP0 : public Instruction
 {
 public:
     JP0(vector<Operand>);
-    int calculate(int, DataMemory&, bool& run);
-	void print();
+	int calculate(int, DataMemory&, bool& run, int thread);
+	stringstream print();
     ~JP0();
 };
 #endif
