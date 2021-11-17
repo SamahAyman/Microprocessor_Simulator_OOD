@@ -1,5 +1,7 @@
 #include "NEG.h" 
 #include "DataMemory.h"
+#include <sstream>
+
 
 //constructor
 NEG::NEG(vector<Operand> inst): Instruction(inst) 
@@ -13,22 +15,30 @@ NEG::NEG(vector<Operand> inst): Instruction(inst)
 }
 
 //execution function
-int NEG::calculate(int pc, DataMemory& data, bool& run)
+int NEG::calculate(int pc, DataMemory& data, bool& run, int thread)
 {
+	stringstream ss;
 	int input = data.get_value(operation.at(0).get_value());
 	int result = -1 * input;
 	data.set_value(operation.at(1).get_value(), result);
-	cout << "Executing Instruction #" << pc << " ==> negating memory location " << operation.at(0).get_value() << " with value " << input << " and storing the result in memory location " << operation.at(1).get_value() << " with value " << result << endl;
-	return pc++;
+
+	ss << "Thread #" << thread << endl;
+	ss << "Instruction #" << pc << " set the data at address " << operation.at(1).get_value()
+		<< " value: " << input << " to the negation: " << -1 * input << endl;
+	cout << ss.str();
+
+	return pc + 1;
 }
 
 //print function
-void NEG::print()
+stringstream NEG::print()
 {
-	cout << "NEG ";
+	stringstream ss;
+	ss << "NEG ";
 	for (Operand iter : operation)
-		cout << iter.get_value() << " ";
-	cout << endl;
+		ss << iter.get_value() << " ";
+	ss << endl;
+	return ss;
 }
 
 //destructor
