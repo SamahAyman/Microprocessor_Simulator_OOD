@@ -22,6 +22,7 @@ int MUL::calculate(int pc, DataMemory& data, bool& run, int thread)
 	int result = input1 * input2;
 	data.set_value(operation.at(2).get_value(), result);
 
+	ss << endl;
 	ss << "Thread #" << thread << endl;
 	ss << "Instruction #" << pc << " multiplied the data at address " << operation.at(0).get_value() 
 	   << " value: " << input1 << " with the data at address " << operation.at(1).get_value() 
