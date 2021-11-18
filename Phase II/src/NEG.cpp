@@ -22,6 +22,7 @@ int NEG::calculate(int pc, DataMemory& data, bool& run, int thread)
 	int result = -1 * input;
 	data.set_value(operation.at(1).get_value(), result);
 
+	ss << endl;
 	ss << "Thread #" << thread << endl;
 	ss << "Instruction #" << pc << " set the data at address " << operation.at(1).get_value()
 		<< " value: " << input << " to the negation: " << -1 * input << endl;
