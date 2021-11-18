@@ -22,12 +22,14 @@ int ADD::calculate(int pc, DataMemory& data, bool& run, int thread)
 	int result = input1 + input2;
 	data.set_value(operation.at(2).get_value(), result);
 
+	ss << endl;
 	ss << "Thread #" << thread << endl;
-	ss << "Instruction #" << pc << " added the data at address " << operation.at(0).get_value()
-		<< " value: " << input1 << " with the data at address " << operation.at(1).get_value()
-		<< " value: " << input2 << " Result = " << input1 + input2 << " saved at " << result << endl;
-
-	ss << "Done excuting instruction" << endl << endl;
+	ss << "Instruction #" << pc << endl; 
+	ss << "Added the data at address: " << operation.at(0).get_value() << " value: " << input1
+	   << " with the data at address: " << operation.at(1).get_value() << " value: " << input2 << endl;
+	ss << "Result = " << result << " saved at: " << operation.at(2).get_value() << endl;
+	
+	ss << "Done excuting instruction #" << pc << endl;
 	cout << ss.str();
 
 	return pc + 1;
