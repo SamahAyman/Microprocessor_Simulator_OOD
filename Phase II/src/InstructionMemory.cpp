@@ -47,7 +47,10 @@ ifstream& operator>>(ifstream& file, InstructionMemory& instMem)
 	int cursor;
 	vector<string> vec;
 	Instruction *InstPtr = nullptr;
-
+	
+	if (line.length() == 0)
+		return file; 
+	
 	while (length < line.length() && line[length] == ' ' || line[length] == '\t') length++;
 	cursor = length;
 	while (length < line.length()) {
@@ -59,12 +62,15 @@ ifstream& operator>>(ifstream& file, InstructionMemory& instMem)
 			throw invalid_argument("Invalid number of parameters!");
 	}
 	vector<Operand> OP;
-	for (int i = 1; i < vec.size(); i++) {
-		if (vec[i - 1] == "ASI") {
+	for (int i = 1; i < vec.size(); i++) 
+	{
+		if (vec[i - 1] == "ASI") 
+		{
 			Operand O(1, atoi(vec[i].c_str()));
 			OP.push_back(O);
 		}
-		else {
+		else 
+		{
 			Operand O(0, atoi(vec[i].c_str()));
 			OP.push_back(O);
 		}
