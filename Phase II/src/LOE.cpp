@@ -24,7 +24,8 @@ int LOE::calculate(int pc, DataMemory &data, bool& run, int thread)
 		data.set_value(operation.at(2).get_value(), 1);
 	else
 		data.set_value(operation.at(2).get_value(), 0);
-
+	
+	ss << endl;
 	ss << "Thread #" << thread << endl;
 	ss << "Instruction #" << pc << " set the data at address " << operation.at(2).get_value()
 		<< " with 1 if the data at address " << operation.at(0).get_value()

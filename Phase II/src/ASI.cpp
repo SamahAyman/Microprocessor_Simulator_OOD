@@ -22,7 +22,8 @@ int ASI::calculate(int pc, DataMemory& data, bool& run, int thread)
 
 	int in1 = operation[0].get_value();
 	data.set_value(operation[1].get_value(), in1);
-
+	
+	ss << endl;
 	ss << "Thread #" << thread << endl;
 	ss << "Instruction #" << pc << " set the data at address " << operation[1].get_value()
 		<< " with the data =  " << in1 << endl;

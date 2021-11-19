@@ -30,6 +30,7 @@ int JPA::calculate(int pc, DataMemory& data, bool& run, int thread)
 	int jpc;
 	jpc = operation[0].get_value();
 
+	ss << endl;
 	ss << "Thread #" << thread << endl;
 	ss << "Instruction #" << pc << " will jump to position " << jpc << endl;
 

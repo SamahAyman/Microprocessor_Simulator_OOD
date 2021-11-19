@@ -26,7 +26,8 @@ int JP0::calculate(int pc, DataMemory& data, bool& run, int thread)
 		jump_condition = "jump";
 	else
 		jump_condition = "not jump";
-
+	
+	ss << endl;
 	ss << "Thread #" << thread << endl;
 	ss << "Instruction #" << pc << " will " << jump_condition << " to position " << input2 << endl;
 	cout << ss.str();
